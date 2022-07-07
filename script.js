@@ -1,5 +1,7 @@
 
 // Write your JavaScript code here!
+// const {myFetch} = require("./scriptHelper");
+// const { pickPlanet } = require("./scriptHelper");
 
  window.addEventListener("load", function() {
    let listedPlanets;
@@ -10,9 +12,7 @@
         console.log(listedPlanets);
    }).then(function () {
     let planet = pickPlanet(listedPlanets);
-    console.log(pickPlanet(listedPlanets));
-    console.log(planet.name);
-    
+    console.log(planet.image);
     addDestinationInfo(missionTarget, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
   })
   
@@ -27,14 +27,15 @@
     let fuelValue = fuelLevel.value;
     let cargoValue = cargoLevel.value;
     let list = "";
-    if (pilotValue === "" || copilotValue === "" || fuelValue === "" || cargoValue === "") {
+   if (pilotValue === "" || copilotValue === "" || fuelValue === "" || cargoValue === "") {
       alert("All fields are required!");
-      event.preventDefault();
-      } else {
+      event.preventDefault();            
+    } else {
         formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
         event.preventDefault();
-      }  
+    }   
+    })  
     })
         
- })
+ 
 
